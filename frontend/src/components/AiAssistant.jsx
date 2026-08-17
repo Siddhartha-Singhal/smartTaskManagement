@@ -11,7 +11,7 @@ const AiAssistant = () => {
     if (!prompt) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/tasks/ai-suggest', { prompt });
+      const res = await axios.post('/api/tasks/ai-suggest', { prompt });
       setSuggestion(res.data.suggestion);
     } catch (err) {
       console.error(err);
