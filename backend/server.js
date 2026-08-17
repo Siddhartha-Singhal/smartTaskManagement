@@ -8,6 +8,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Smart Task Management API is running',
+    status: 'ok',
+    routes: {
+      tasks: '/api/tasks',
+      aiSuggestions: '/api/tasks/ai-suggest',
+      health: '/health'
+    }
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Server healthy' });
+});
+
 // Routes
 const taskRoutes = require('./routes/taskRoutes');
 app.use('/api/tasks', taskRoutes);

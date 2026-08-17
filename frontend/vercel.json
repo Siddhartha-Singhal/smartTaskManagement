@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://smarttaskmanagement-rds5.onrender.com/api/$1"
+    }
+  ]
+}
